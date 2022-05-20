@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const path = require('path');
-
+var favicon = require('serve-favicon')
 const app = express();
 
 // settings 

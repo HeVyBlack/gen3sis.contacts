@@ -1,0 +1,11 @@
+.card-text {
+    border-radius: 0;
+}
+
+.card {
+    border-radius: 0;
+}
+
+.card .btn, .card .btn a{
+    color: black;
+}

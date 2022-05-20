@@ -1,0 +1,123 @@
+*{
+    max-width: 100%;
+}
+
+.navbar-bg{
+    background-color: rgba(5, 242, 199, .30);
+    
+}
+.navbar-bg a {
+    font-weight: 700 !important; 
+}
+
+.lineText {
+    background-image: 
+    linear-gradient(
+        transparent 95%,
+        #04d9d9 50%,
+        #04d9d9 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 10% 90%;
+    background-position-x: right;
+
+    transition: background-size 300ms;
+}
+
+.lineText:hover {
+    background-size: 100% 90%;
+    background-position-x: right;
+}
+
+.bg-text {
+    background: rgb(4,96,217);
+    background: linear-gradient(90deg, rgba(4,96,217,0.34807426388524154) 0%, rgba(4,135,217,0.3536765047816002) 50%, rgba(4,217,217,0.3536765047816002) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.bg-text:hover {
+    background: rgb(5,242,199);
+    background: linear-gradient(90deg, rgba(5,242,199,0.34807426388524154) 0%, rgba(4,217,217,0.3536765047816002) 50%, rgba(4,135,217,0.3536765047816002) 100%);
+}
+
+.overflow {
+    height: 400px;
+    overflow: hidden;
+}
+
+.card-tittle{
+    background-color: white;
+}
+
+.card-text{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 10px;
+    background-color: white;
+    left: 0;
+    top: 55%;
+}
+
+body{
+    background-color: rgba(4, 96, 217, 0.3); 
+}
+
+footer {
+    background: rgb(8,54,115);
+    background: linear-gradient(90deg, rgba(8,54,115,0.75) 0%, rgba(8,54,115,0.75) 50%, rgba(6,94,166,0.75) 100%);
+}
+
+footer ul li {
+    font-weight: 600;
+}
+
+.link-bubble {
+    background: rgb(4,96,217);
+    background: linear-gradient(90deg, rgba(4,96,217,0.75) 0%, rgba(4,135,217,0.75) 50%, rgba(4,217,217,0.75) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+    cursor: default;
+    top: 15%;
+    position: fixed;
+    width: max-content;
+    padding: 10px;
+    font-family: 'Maven Pro', sans-serif;
+    transition: all 2s linear;
+    display: block;
+}
+
+.bubble-tittle, .bubble-p button {
+    color: black;
+}
+
+.bubble-p {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.bubble-p a {
+    color: black;
+}
+
+.link-bubble:hover .bubble-p{
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+    transition: all 0s, opacity 0.7s;
+}
+
+.carousel, .carousel-item.active, .slide {
+    height: 200px;
+}
+  
+.carousel-item img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 200px;
+}

@@ -4,8 +4,9 @@ const { firestore, app } = require('firebase-admin');
 const router = Router();
 const admin = require('firebase-admin');
 const path = require('path')
-
+const express = require('express')
 const serviceAccount = require(path.join('../../', process.env.DATABASEKEY)); 
+const direname = express();
 
 console.log(process.env.DATABASEKEY);
 
@@ -16,9 +17,13 @@ admin.initializeApp({
 
 const db = admin.database();
 
+direname.use(express.static(__dirname + '/src/public/'));
 
 router.get('/', (req, res)=>{
-    res.render('index')
+    db.ref('contacts').once('value',(snapshot)=>{
+        const data = snapshot.val();
+        res.render('index', {contacts: data});
+    });
 });
 
 router.post('/new-contact', (req, res)=>{
@@ -27,10 +32,19 @@ router.post('/new-contact', (req, res)=>{
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         email : req.body.email,
-        phone : req.body.phone
+        phone : req.body.phone,
+        reason : req.body.reason
     };
     db.ref('contacts').push(newContact);
-    res.send('recibido'); 
-})
+    res.redirect('/');
+});
+
+router.get('/go-to-contact', (req, res)=>{
+    res.render('contact');
+});
+
+router.get('/go-to-singInContact', (req, res) =>{
+    res.render('sigInContact');
+});
 
 module.exports = router;
