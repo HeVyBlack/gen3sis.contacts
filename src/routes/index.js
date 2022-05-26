@@ -20,10 +20,7 @@ const db = admin.database();
 direname.use(express.static(__dirname + '/src/public/'));
 
 router.get('/', (req, res)=>{
-    db.ref('contacts').once('value',(snapshot)=>{
-        const data = snapshot.val();
-        res.render('index', {contacts: data});
-    });
+        res.render('index');
 });
 
 router.post('/new-contact', (req, res)=>{
